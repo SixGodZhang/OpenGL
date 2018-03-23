@@ -1,0 +1,4 @@
+﻿  TextureMain.cpp
+d:\opengl\includes\shader.h(52): warning C4101: “infoLog”: 未引用的局部变量
+d:\opengl\includes\shader.h(51): warning C4101: “success”: 未引用的局部变量
+  TextureDemo.vcxproj -> D:\OpenGL\Code\HelloOpenGL\x64\Debug\TextureDemo.exe

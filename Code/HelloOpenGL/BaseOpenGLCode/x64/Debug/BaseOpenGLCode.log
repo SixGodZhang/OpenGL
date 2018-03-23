@@ -1,0 +1,5 @@
+﻿  BaseCommon.cpp
+d:\opengl\code\helloopengl\baseopenglcode\basehead.h(50): warning C4715: “CommonMethod::InitializeGLFW”: 不是所有的控件路径都返回值
+LINK : warning LNK4098: 默认库“MSVCRT”与其他库的使用冲突；请使用 /NODEFAULTLIB:library
+BaseCommon.obj : error LNK2001: 无法解析的外部符号 "public: static struct GLFWwindow * CommonMethod::window" (?window@CommonMethod@@2PEAUGLFWwindow@@EA)
+D:\OpenGL\Code\HelloOpenGL\x64\Debug\BaseOpenGLCode.exe : fatal error LNK1120: 1 个无法解析的外部命令
