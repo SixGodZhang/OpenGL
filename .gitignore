@@ -37,4 +37,9 @@
 *.opendb
 *.db-wal
 *.ipch
+*.log
+*tlog
+*.idb
+*.ilk
+*.pdb
 © 2018 GitHub, Inc.
