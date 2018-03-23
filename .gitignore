@@ -30,4 +30,11 @@
 *.exe
 *.out
 *.app
+
+# selfDiscard
+*.db
+*.db-shm
+*.opendb
+*.db-wal
+*.ipch
 © 2018 GitHub, Inc.
