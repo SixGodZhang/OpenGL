@@ -3,11 +3,11 @@
 ## Code ##
 工程的源代码。
 
-- HelloOpenGL 第一个OpenGL代码
-- DrawTriangleDemo OpenGL绘制三角形
-- MaterixDemo 绘制矩形
-- ShaderDemo 编写Shader
-- TextureDemo 附着纹理
+- HelloOpenGL 第一个OpenGL代码:简单窗口
+- DrawTriangleDemo OpenGL绘制三角形:三色三角形
+- MaterixDemo 绘制矩形:
+- ShaderDemo 封装Shader
+- TextureDemo 使用纹理贴图
 
 ## glfw-3.2.1 ##
 glfw-3.2.1源码,可以编译得到glfw3.lib。
