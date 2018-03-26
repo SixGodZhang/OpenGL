@@ -12,7 +12,13 @@
 
 #include <iostream>
 
+//帧回调
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
+//鼠标位置回调
+void mouse_callback(GLFWwindow* window, double xpos, double ypos);
+//鼠标滚轮回调
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset);
+//键盘按键回调
 void processInput(GLFWwindow *window);
 
 const unsigned int SCR_WIDTH = 800;
@@ -22,6 +28,14 @@ const unsigned int SCR_HEIGHT = 600;
 glm::vec3 cameraPos = glm::vec3(0.0f, 0.0f, 3.0f);
 glm::vec3 cameraFront = glm::vec3(0.0f, 0.0f, -1.0f);
 glm::vec3 cameraUp = glm::vec3(0.0f, 1.0f, 0.0f);
+
+//mouse
+bool firstMouse = true;//是否是第一次获取鼠标位置
+float yaw = -90.0f;//偏航角
+float pitch = 0.0f;//俯仰角
+float lastX = SCR_WIDTH / 2.0;//上一次鼠标的横坐标
+float lastY = SCR_HEIGHT / 2.0;//上一次鼠标的纵坐标
+float fov = 45.0f;//视角
 
 //timing
 float deltaTime = 0.0f;
@@ -47,7 +61,8 @@ int main()
 
 	glfwMakeContextCurrent(window);
 	glfwSetFramebufferSizeCallback(window, framebuffer_size_callback);
-
+	glfwSetCursorPosCallback(window, mouse_callback);
+	glfwSetScrollCallback(window, scroll_callback);
 
 	if (!gladLoadGLLoader((GLADloadproc)glfwGetProcAddress)) {
 		std::cout << "Failed to initialize GLAD" << std::endl;
@@ -216,7 +231,7 @@ int main()
 
 
 		glm::mat4 projection;
-		projection = glm::perspective(glm::radians(45.0f), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
+		projection = glm::perspective(glm::radians(fov), (float)SCR_WIDTH / (float)SCR_HEIGHT, 0.1f, 100.0f);
 
 		ourShader.setMat4("projection", projection);
 
@@ -283,4 +298,50 @@ void framebuffer_size_callback(GLFWwindow* window, int width, int height)
 	// make sure the viewport matches the new window dimensions; note that width and 
 	// height will be significantly larger than specified on retina displays.
 	glViewport(0, 0, width, height);
+}
+
+void mouse_callback(GLFWwindow* window, double xpos, double ypos)
+{
+	if (firstMouse)
+	{
+		lastX = xpos;
+		lastY = ypos;
+		firstMouse = false;
+	}
+
+	//std::cout << "Mouse Position: (" << xpos <<"," << ypos << ")" << std::endl;
+	float xoffset = xpos - lastX;
+	//鼠标上移，俯仰角增大,但是鼠标上移（ypos - lastY）是一个负数,俯仰角增大，应加一个正数，因此应该取相反数
+	float yoffset = lastY - ypos;
+	lastX = xpos;
+	lastY = ypos;
+
+	float sensitivity = 0.1f;
+	xoffset *= sensitivity;
+	yoffset *= sensitivity;
+
+	//?:角度加到偏移量上去
+	yaw += xoffset;
+	pitch += yoffset;
+
+	if (pitch > 89.0f)
+		pitch = 89.0f;
+	if (pitch < -89.0f)
+		pitch = -89.0f;
+
+	glm::vec3 front;
+	front.x = cos(glm::radians(yaw))*cos(glm::radians(pitch));
+	front.y = sin(glm::radians(pitch));
+	front.z = sin(glm::radians(yaw)*cos(glm::radians(pitch)));
+	cameraFront = glm::normalize(front);
+}
+
+void scroll_callback(GLFWwindow* window, double xoffset, double yoffset)
+{
+	if (fov >= 1.0f && fov <= 45.0f)
+		fov -= yoffset;
+	if (fov <= 1.0f)
+		fov = 1.0f;
+	if (fov >= 45.0f)
+		fov = 45.0f;
 }
