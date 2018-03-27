@@ -54,7 +54,7 @@ int main()
 	glfwSetScrollCallback(window, scroll_callback);
 
 	// tell GLFW to capture our mouse
-	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	//glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	// glad: load all OpenGL function pointers
 	// ---------------------------------------
@@ -166,6 +166,10 @@ int main()
 		// ------
 		glClearColor(0.1f, 0.1f, 0.1f, 1.0f);
 		glClear(GL_COLOR_BUFFER_BIT | GL_DEPTH_BUFFER_BIT);
+
+		//change the light's position values over time
+		lightPos.x = 1.0f + sin(glfwGetTime())*2.0f;
+		lightPos.y = sin(glfwGetTime() / 2.0f)*1.0f;
 
 		// be sure to activate shader when setting uniforms/drawing objects
 		lightingShader.use();
