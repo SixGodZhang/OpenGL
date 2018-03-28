@@ -1,18 +1,18 @@
 #version 330 core
-out vec4 FragColor;
+out vec4 FragColor;//最终片元颜色
 
 struct Material {
-    sampler2D diffuse;
-    vec3 specular;    
-    float shininess;
+    sampler2D diffuse; // 漫反射贴图
+    vec3 specular; //镜面反射
+    float shininess; //镜面反射强度
 }; 
 
 struct Light {
-    vec3 position;
+    vec3 position; //光源位置
 
-    vec3 ambient;
-    vec3 diffuse;
-    vec3 specular;
+    vec3 ambient; //环境光
+    vec3 diffuse; //漫反射贴图
+    vec3 specular; //镜面反射强度
 };
 
 in vec3 FragPos;  
