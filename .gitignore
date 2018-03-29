@@ -38,7 +38,7 @@
 *.db-wal
 *.ipch
 *.log
-*tlog
+*.tlog
 *.idb
 *.ilk
 *.pdb

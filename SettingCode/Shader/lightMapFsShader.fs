@@ -2,17 +2,17 @@
 out vec4 FragColor;//最终片元颜色
 
 struct Material {
-    sampler2D diffuse; // 漫反射贴图
+    sampler2D diffuse; // 漫反射
     vec3 specular; //镜面反射
     float shininess; //镜面反射强度
 }; 
 
 struct Light {
-    vec3 position; //光源位置
+    vec3 position; //光源 位置
 
-    vec3 ambient; //环境光
-    vec3 diffuse; //漫反射贴图
-    vec3 specular; //镜面反射强度
+    vec3 ambient; //环境光 颜色
+    vec3 diffuse; //漫反射 颜色
+    vec3 specular; //镜面反射 颜色
 };
 
 in vec3 FragPos;  
@@ -38,7 +38,7 @@ void main()
     vec3 viewDir = normalize(viewPos - FragPos);
     vec3 reflectDir = reflect(-lightDir, norm);  
     float spec = pow(max(dot(viewDir, reflectDir), 0.0), material.shininess);
-    vec3 specular = light.specular * (spec * material.specular);  
+    vec3 specular = light.specular * spec * material.specular;  
         
     vec3 result = ambient + diffuse + specular;
     FragColor = vec4(result, 1.0);

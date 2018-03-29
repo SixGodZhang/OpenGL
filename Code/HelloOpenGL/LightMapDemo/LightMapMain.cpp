@@ -159,11 +159,10 @@ int main()
 	// -----------------------------------------------------------------------------
 	unsigned int diffuseMap = loadTexture("../../../resources/images/container2.png");
 
-	// shader configuration
+	// shader configuration:initialize material.diffuse
 	// --------------------
 	lightingShader.use();
 	lightingShader.setInt("material.diffuse", 0);
-
 
 	// render loop
 	// -----------
