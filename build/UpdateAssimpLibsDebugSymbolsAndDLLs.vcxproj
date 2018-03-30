@@ -1,0 +1,471 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="MinSizeRel|Win32">
+      <Configuration>MinSizeRel</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="RelWithDebInfo|Win32">
+      <Configuration>RelWithDebInfo</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{8FE5F5F4-992E-365D-A340-9F1BF8D69A14}</ProjectGuid>
+    <WindowsTargetPlatformVersion>10.0.16299.0</WindowsTargetPlatformVersion>
+    <Keyword>Win32Proj</Keyword>
+    <Platform>Win32</Platform>
+    <ProjectName>UpdateAssimpLibsDebugSymbolsAndDLLs</ProjectName>
+    <VCProjectUpgraderObjectName>NoUpgrade</VCProjectUpgraderObjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'" Label="Configuration">
+    <ConfigurationType>Utility</ConfigurationType>
+    <CharacterSet>MultiByte</CharacterSet>
+    <PlatformToolset>v141</PlatformToolset>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>10.0.20506.1</_ProjectFileVersion>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+    <IntDir Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">$(Platform)\$(Configuration)\$(ProjectName)\</IntDir>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\.;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\include;D:\OpenGL\build;D:\OpenGL\build\include;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\contrib\zlib;D:\OpenGL\build\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>							</Message>
+      <Command>setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Release/assimp-vc140-mt.dll assimp-vc140-mt.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Release/assimp-vc140-mt.exp assimp-vc140-mt.exp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Release/assimp-vc140-mt.lib assimp-vc140-mt.lib
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.dll assimp-vc140-mtd.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.exp assimp-vc140-mtd.exp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.ilk assimp-vc140-mtd.ilk
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.lib assimp-vc140-mtd.lib
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.pdb assimp-vc140-mtd.pdb
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\.;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\include;D:\OpenGL\build;D:\OpenGL\build\include;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\contrib\zlib;D:\OpenGL\build\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>							</Message>
+      <Command>setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Release/assimp-vc140-mt.dll assimp-vc140-mt.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Release/assimp-vc140-mt.exp assimp-vc140-mt.exp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Release/assimp-vc140-mt.lib assimp-vc140-mt.lib
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.dll assimp-vc140-mtd.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.exp assimp-vc140-mtd.exp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.ilk assimp-vc140-mtd.ilk
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.lib assimp-vc140-mtd.lib
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.pdb assimp-vc140-mtd.pdb
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\.;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\include;D:\OpenGL\build;D:\OpenGL\build\include;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\contrib\zlib;D:\OpenGL\build\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>							</Message>
+      <Command>setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Release/assimp-vc140-mt.dll assimp-vc140-mt.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Release/assimp-vc140-mt.exp assimp-vc140-mt.exp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Release/assimp-vc140-mt.lib assimp-vc140-mt.lib
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.dll assimp-vc140-mtd.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.exp assimp-vc140-mtd.exp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.ilk assimp-vc140-mtd.ilk
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.lib assimp-vc140-mtd.lib
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.pdb assimp-vc140-mtd.pdb
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">
+    <Midl>
+      <AdditionalIncludeDirectories>C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\.;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\include;D:\OpenGL\build;D:\OpenGL\build\include;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\contrib\zlib;D:\OpenGL\build\contrib\zlib;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <OutputDirectory>$(ProjectDir)/$(IntDir)</OutputDirectory>
+      <HeaderFileName>%(Filename).h</HeaderFileName>
+      <TypeLibraryName>%(Filename).tlb</TypeLibraryName>
+      <InterfaceIdentifierFileName>%(Filename)_i.c</InterfaceIdentifierFileName>
+      <ProxyFileName>%(Filename)_p.c</ProxyFileName>
+    </Midl>
+    <PostBuildEvent>
+      <Message>							</Message>
+      <Command>setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Release/assimp-vc140-mt.dll assimp-vc140-mt.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Release/assimp-vc140-mt.exp assimp-vc140-mt.exp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Release/assimp-vc140-mt.lib assimp-vc140-mt.lib
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.dll assimp-vc140-mtd.dll
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.exp assimp-vc140-mtd.exp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.ilk assimp-vc140-mtd.ilk
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.lib assimp-vc140-mtd.lib
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd
+setlocal
+C:\CMake32\bin\cmake.exe -E copy D:/OpenGL/build/code/Debug/assimp-vc140-mtd.pdb assimp-vc140-mtd.pdb
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+    </PostBuildEvent>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\CMakeLists.txt">
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Building Custom Rule C:/Users/zhanghui/Desktop/OpenGLCode/assimp-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">setlocal
+C:\CMake32\bin\cmake.exe -HC:/Users/zhanghui/Desktop/OpenGLCode/assimp-master -BD:/OpenGL/build --check-stamp-file D:/OpenGL/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">C:/Users/zhanghui/Desktop/OpenGLCode/assimp-master/CMakeLists.txt;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\CMakeLists.txt;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineSystem.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeSystem.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeSystem.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeSystemSpecificInitialize.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerId.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCompilerIdDetection.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\TI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\CompilerId\VS-10.vcxproj.in;C:\CMake32\share\cmake-3.11\Modules\CMakeFindBinUtils.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCXXCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-Determine-CXX.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerId.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCompilerIdDetection.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\TI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\CompilerId\VS-10.vcxproj.in;C:\CMake32\share\cmake-3.11\Modules\CMakeFindBinUtils.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCXXCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeSystemSpecificInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeGenericSystem.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeInitializeConfigs.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\WindowsPaths.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeLanguageInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC-C.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineRCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeRCCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeRCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeRCInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestRCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCompilerCommon.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerABI.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeParseImplicitLinkInfo.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCCompilerABI.c;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompileFeatures.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeLanguageInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-CXX.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC-CXX.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCXXCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCompilerCommon.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerABI.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeParseImplicitLinkInfo.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXCompilerABI.cpp;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompileFeatures.cmake;C:\CMake32\share\cmake-3.11\Modules\Internal\FeatureTesting.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;D:\OpenGL\build\CMakeFiles\feature_tests.cxx;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCXXCompiler.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\revision.h.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\include\assimp\config.h.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindPkgMacros.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\PrecompiledHeader.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\cmake_uninstall.cmake.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\assimp-config.cmake.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\assimp-config-version.cmake.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindDirectX.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindPkgMacros.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindZLIB.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindPkgMacros.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPkgConfig.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckIncludeFile.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckTypeSize.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckIncludeFile.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckIncludeFileCXX.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckFunctionExists.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPkgConfig.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindDevIL.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\CMake32\share\cmake-3.11\Modules\FindOpenGL.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\assimp.pc.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">D:\OpenGL\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Building Custom Rule C:/Users/zhanghui/Desktop/OpenGLCode/assimp-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">setlocal
+C:\CMake32\bin\cmake.exe -HC:/Users/zhanghui/Desktop/OpenGLCode/assimp-master -BD:/OpenGL/build --check-stamp-file D:/OpenGL/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">C:/Users/zhanghui/Desktop/OpenGLCode/assimp-master/CMakeLists.txt;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\CMakeLists.txt;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineSystem.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeSystem.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeSystem.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeSystemSpecificInitialize.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerId.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCompilerIdDetection.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\TI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\CompilerId\VS-10.vcxproj.in;C:\CMake32\share\cmake-3.11\Modules\CMakeFindBinUtils.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCXXCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-Determine-CXX.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerId.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCompilerIdDetection.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\TI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\CompilerId\VS-10.vcxproj.in;C:\CMake32\share\cmake-3.11\Modules\CMakeFindBinUtils.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCXXCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeSystemSpecificInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeGenericSystem.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeInitializeConfigs.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\WindowsPaths.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeLanguageInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC-C.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineRCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeRCCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeRCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeRCInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestRCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCompilerCommon.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerABI.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeParseImplicitLinkInfo.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCCompilerABI.c;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompileFeatures.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeLanguageInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-CXX.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC-CXX.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCXXCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCompilerCommon.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerABI.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeParseImplicitLinkInfo.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXCompilerABI.cpp;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompileFeatures.cmake;C:\CMake32\share\cmake-3.11\Modules\Internal\FeatureTesting.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;D:\OpenGL\build\CMakeFiles\feature_tests.cxx;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCXXCompiler.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\revision.h.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\include\assimp\config.h.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindPkgMacros.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\PrecompiledHeader.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\cmake_uninstall.cmake.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\assimp-config.cmake.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\assimp-config-version.cmake.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindDirectX.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindPkgMacros.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindZLIB.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindPkgMacros.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPkgConfig.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckIncludeFile.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckTypeSize.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckIncludeFile.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckIncludeFileCXX.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckFunctionExists.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPkgConfig.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindDevIL.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\CMake32\share\cmake-3.11\Modules\FindOpenGL.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\assimp.pc.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">D:\OpenGL\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">Building Custom Rule C:/Users/zhanghui/Desktop/OpenGLCode/assimp-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">setlocal
+C:\CMake32\bin\cmake.exe -HC:/Users/zhanghui/Desktop/OpenGLCode/assimp-master -BD:/OpenGL/build --check-stamp-file D:/OpenGL/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">C:/Users/zhanghui/Desktop/OpenGLCode/assimp-master/CMakeLists.txt;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\CMakeLists.txt;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineSystem.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeSystem.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeSystem.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeSystemSpecificInitialize.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerId.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCompilerIdDetection.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\TI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\CompilerId\VS-10.vcxproj.in;C:\CMake32\share\cmake-3.11\Modules\CMakeFindBinUtils.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCXXCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-Determine-CXX.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerId.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCompilerIdDetection.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\TI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\CompilerId\VS-10.vcxproj.in;C:\CMake32\share\cmake-3.11\Modules\CMakeFindBinUtils.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCXXCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeSystemSpecificInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeGenericSystem.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeInitializeConfigs.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\WindowsPaths.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeLanguageInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC-C.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineRCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeRCCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeRCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeRCInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestRCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCompilerCommon.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerABI.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeParseImplicitLinkInfo.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCCompilerABI.c;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompileFeatures.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeLanguageInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-CXX.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC-CXX.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCXXCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCompilerCommon.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerABI.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeParseImplicitLinkInfo.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXCompilerABI.cpp;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompileFeatures.cmake;C:\CMake32\share\cmake-3.11\Modules\Internal\FeatureTesting.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;D:\OpenGL\build\CMakeFiles\feature_tests.cxx;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCXXCompiler.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\revision.h.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\include\assimp\config.h.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindPkgMacros.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\PrecompiledHeader.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\cmake_uninstall.cmake.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\assimp-config.cmake.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\assimp-config-version.cmake.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindDirectX.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindPkgMacros.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindZLIB.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindPkgMacros.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPkgConfig.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckIncludeFile.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckTypeSize.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckIncludeFile.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckIncludeFileCXX.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckFunctionExists.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPkgConfig.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindDevIL.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\CMake32\share\cmake-3.11\Modules\FindOpenGL.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\assimp.pc.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">D:\OpenGL\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='MinSizeRel|Win32'">false</LinkObjects>
+      <Message Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">Building Custom Rule C:/Users/zhanghui/Desktop/OpenGLCode/assimp-master/CMakeLists.txt</Message>
+      <Command Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">setlocal
+C:\CMake32\bin\cmake.exe -HC:/Users/zhanghui/Desktop/OpenGLCode/assimp-master -BD:/OpenGL/build --check-stamp-file D:/OpenGL/build/CMakeFiles/generate.stamp
+if %errorlevel% neq 0 goto :cmEnd
+:cmEnd
+endlocal &amp; call :cmErrorLevel %errorlevel% &amp; goto :cmDone
+:cmErrorLevel
+exit /b %1
+:cmDone
+if %errorlevel% neq 0 goto :VCEnd</Command>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">C:/Users/zhanghui/Desktop/OpenGLCode/assimp-master/CMakeLists.txt;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\CMakeLists.txt;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineSystem.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeSystem.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeSystem.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeSystemSpecificInitialize.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerId.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCompilerIdDetection.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Bruce-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Compaq-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GNU-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\HP-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SDCC-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SunPro-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\TI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\TinyCC-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\VisualAge-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\XL-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\zOS-C-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-C-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\CompilerId\VS-10.vcxproj.in;C:\CMake32\share\cmake-3.11\Modules\CMakeFindBinUtils.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCXXCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-Determine-CXX.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerId.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCompilerIdDetection.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ADSP-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\ARMCC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\AppleClang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Borland-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Clang-DetermineCompilerInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Comeau-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Compaq-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Cray-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Embarcadero-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Fujitsu-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GHS-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\GNU-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\HP-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IAR-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Intel-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MIPSpro-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\NVIDIA-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\OpenWatcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PGI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\PathScale-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SCO-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\SunPro-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\TI-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\VisualAge-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\Watcom-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\XL-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\zOS-CXX-DetermineCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\IBMCPP-CXX-DetermineVersionInternal.cmake;C:\CMake32\share\cmake-3.11\Modules\CompilerId\VS-10.vcxproj.in;C:\CMake32\share\cmake-3.11\Modules\CMakeFindBinUtils.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCXXCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeSystemSpecificInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeGenericSystem.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeInitializeConfigs.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\WindowsPaths.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeLanguageInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC-C.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineRCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeRCCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeRCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeRCInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestRCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCompilerCommon.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerABI.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeParseImplicitLinkInfo.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCCompilerABI.c;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompileFeatures.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeLanguageInformation.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-CXX.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\CMakeCommonCompilerMacros.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC-CXX.cmake;C:\CMake32\share\cmake-3.11\Modules\Platform\Windows-MSVC.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCommonLanguageInclude.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCXXCompiler.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeTestCompilerCommon.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompilerABI.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeParseImplicitLinkInfo.cmake;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXCompilerABI.cpp;C:\CMake32\share\cmake-3.11\Modules\CMakeDetermineCompileFeatures.cmake;C:\CMake32\share\cmake-3.11\Modules\Internal\FeatureTesting.cmake;C:\CMake32\share\cmake-3.11\Modules\Compiler\MSVC-CXX-FeatureTests.cmake;D:\OpenGL\build\CMakeFiles\feature_tests.cxx;C:\CMake32\share\cmake-3.11\Modules\CMakeCXXCompiler.cmake.in;D:\OpenGL\build\CMakeFiles\3.11.0-rc3\CMakeCXXCompiler.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\revision.h.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\include\assimp\config.h.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindPkgMacros.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\PrecompiledHeader.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\cmake_uninstall.cmake.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\assimp-config.cmake.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\assimp-config-version.cmake.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindDirectX.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindPkgMacros.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindZLIB.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindPkgMacros.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPkgConfig.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckIncludeFile.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckTypeSize.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckIncludeFile.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckIncludeFileCXX.cmake;C:\CMake32\share\cmake-3.11\Modules\CheckFunctionExists.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPkgConfig.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\cmake-modules\FindDevIL.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\CMake32\share\cmake-3.11\Modules\FindOpenGL.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageHandleStandardArgs.cmake;C:\CMake32\share\cmake-3.11\Modules\FindPackageMessage.cmake;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\assimp.pc.in;C:\Users\zhanghui\Desktop\OpenGLCode\assimp-master\CMakeLists.txt;%(AdditionalInputs)</AdditionalInputs>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">D:\OpenGL\build\CMakeFiles\generate.stamp</Outputs>
+      <LinkObjects Condition="'$(Configuration)|$(Platform)'=='RelWithDebInfo|Win32'">false</LinkObjects>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="D:\OpenGL\build\ZERO_CHECK.vcxproj">
+      <Project>{591077CA-0CFD-3232-98D7-7728E42C8346}</Project>
+      <Name>ZERO_CHECK</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>

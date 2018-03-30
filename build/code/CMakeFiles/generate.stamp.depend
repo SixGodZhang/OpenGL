@@ -1,0 +1,5 @@
+# CMake generation dependency list for this directory.
+C:/Users/zhanghui/Desktop/OpenGLCode/assimp-master/code/CMakeLists.txt
+C:/Users/zhanghui/Desktop/OpenGLCode/assimp-master/cmake-modules/FindRT.cmake
+C:/CMake32/share/cmake-3.11/Modules/FindPackageHandleStandardArgs.cmake
+C:/CMake32/share/cmake-3.11/Modules/FindPackageMessage.cmake
