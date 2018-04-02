@@ -35,6 +35,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "SpotLightDemo", "SpotLightD
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultiLightDemo", "MultiLightDemo\MultiLightDemo.vcxproj", "{00C93758-E30F-4018-899B-73929E1EF191}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoadModelDemo", "LoadModelDemo\LoadModelDemo.vcxproj", "{82D905F3-5593-43B6-A71C-28CECB6881F1}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -171,6 +173,14 @@ Global
 		{00C93758-E30F-4018-899B-73929E1EF191}.Release|x64.Build.0 = Release|x64
 		{00C93758-E30F-4018-899B-73929E1EF191}.Release|x86.ActiveCfg = Release|Win32
 		{00C93758-E30F-4018-899B-73929E1EF191}.Release|x86.Build.0 = Release|Win32
+		{82D905F3-5593-43B6-A71C-28CECB6881F1}.Debug|x64.ActiveCfg = Debug|x64
+		{82D905F3-5593-43B6-A71C-28CECB6881F1}.Debug|x64.Build.0 = Debug|x64
+		{82D905F3-5593-43B6-A71C-28CECB6881F1}.Debug|x86.ActiveCfg = Debug|Win32
+		{82D905F3-5593-43B6-A71C-28CECB6881F1}.Debug|x86.Build.0 = Debug|Win32
+		{82D905F3-5593-43B6-A71C-28CECB6881F1}.Release|x64.ActiveCfg = Release|x64
+		{82D905F3-5593-43B6-A71C-28CECB6881F1}.Release|x64.Build.0 = Release|x64
+		{82D905F3-5593-43B6-A71C-28CECB6881F1}.Release|x86.ActiveCfg = Release|Win32
+		{82D905F3-5593-43B6-A71C-28CECB6881F1}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
