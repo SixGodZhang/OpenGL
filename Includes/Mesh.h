@@ -107,7 +107,7 @@ private:
 		glGenBuffers(1, &EBO);
 
 		glBindVertexArray(VAO);
-		// load data into vertex buffers
+		// load data into vertex buffers 
 		glBindBuffer(GL_ARRAY_BUFFER, VBO);
 		// A great thing about structs is that their memory layout is sequential for all its items.
 		// The effect is that we can simply pass a pointer to the struct and it translates perfectly to a glm::vec3/2 array which

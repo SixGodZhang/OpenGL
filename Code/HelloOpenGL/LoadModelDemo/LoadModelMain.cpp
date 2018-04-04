@@ -8,7 +8,6 @@
 #include <Shader.h>
 #include <camera.h>
 #include <Model.h>
-
 #include <iostream>
 
 void framebuffer_size_callback(GLFWwindow* window, int width, int height);
@@ -52,7 +51,7 @@ int main()
 	glfwSetScrollCallback(window, scroll_callback);
 
 	// tell GLFW to capture our mouse
-	glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
+	//glfwSetInputMode(window, GLFW_CURSOR, GLFW_CURSOR_DISABLED);
 
 	// glad: load all OpenGL function pointers
 	// ---------------------------------------
@@ -68,7 +67,7 @@ int main()
 
 	// build and compile shaders
 	// -------------------------
-	Shader ourShader("1.model_loading.vs", "1.model_loading.fs");
+	Shader ourShader("../../../SettingCode/Shader/ModelLoading.vs", "../../../SettingCode/Shader/ModelLoading.fs");
 
 	// load models
 	// -----------
