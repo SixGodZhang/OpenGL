@@ -37,6 +37,8 @@ Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "MultiLightDemo", "MultiLigh
 EndProject
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "LoadModelDemo", "LoadModelDemo\LoadModelDemo.vcxproj", "{82D905F3-5593-43B6-A71C-28CECB6881F1}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "DepthTestingDemo", "DepthTestingDemo\DepthTestingDemo.vcxproj", "{88652346-F149-40A9-B954-1E6C51FEF6AD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|x64 = Debug|x64
@@ -181,6 +183,14 @@ Global
 		{82D905F3-5593-43B6-A71C-28CECB6881F1}.Release|x64.Build.0 = Release|x64
 		{82D905F3-5593-43B6-A71C-28CECB6881F1}.Release|x86.ActiveCfg = Release|Win32
 		{82D905F3-5593-43B6-A71C-28CECB6881F1}.Release|x86.Build.0 = Release|Win32
+		{88652346-F149-40A9-B954-1E6C51FEF6AD}.Debug|x64.ActiveCfg = Debug|x64
+		{88652346-F149-40A9-B954-1E6C51FEF6AD}.Debug|x64.Build.0 = Debug|x64
+		{88652346-F149-40A9-B954-1E6C51FEF6AD}.Debug|x86.ActiveCfg = Debug|Win32
+		{88652346-F149-40A9-B954-1E6C51FEF6AD}.Debug|x86.Build.0 = Debug|Win32
+		{88652346-F149-40A9-B954-1E6C51FEF6AD}.Release|x64.ActiveCfg = Release|x64
+		{88652346-F149-40A9-B954-1E6C51FEF6AD}.Release|x64.Build.0 = Release|x64
+		{88652346-F149-40A9-B954-1E6C51FEF6AD}.Release|x86.ActiveCfg = Release|Win32
+		{88652346-F149-40A9-B954-1E6C51FEF6AD}.Release|x86.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
