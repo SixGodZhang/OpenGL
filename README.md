@@ -4,7 +4,7 @@
 工程的源代码。
 
 - HelloOpenGL 第一个OpenGL代码:简单窗口
-
+![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/HelloOpenGL.jpg)
 - DrawTriangleDemo OpenGL绘制三角形:三色三角形
 - MaterixDemo 绘制矩形:
 - ShaderDemo 封装Shader
