@@ -33,7 +33,13 @@
 ![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/MutiLight.jpg)
 - PointLightDemo 点光源
 - SpotLightDemo 聚光灯
-- FrameBufferDemo
+- FrameBufferPostProcessing 帧缓存后期处理(只与帧缓存Shader存在差异，Code一致)
+![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/边缘检测.jpg)
+![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/反相.jpg)
+![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/核效果.jpg)
+![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/灰度.jpg)
+![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/模糊.jpg)
+- FrameBufferDemo 帧缓存
 ![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/FrameBufferMain.jpg)
 - FaceCullingDemo 面剔除
 ![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/faceCullingDemo.jpg)
