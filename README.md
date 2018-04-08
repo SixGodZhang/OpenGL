@@ -1,4 +1,6 @@
 # OpenGL #
+配置环境
+![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/OpenGL环境配置.jpg)
 
 ## Code ##
 工程的源代码。
