@@ -2,6 +2,21 @@
 配置环境
 ![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/OpenGL环境配置.jpg)
 
+## glfw-3.2.1 ##
+glfw-3.2.1源码,可以编译得到glfw3.lib。
+
+## Includes ##
+包含OpenGL需要的各种头文件。
+
+## Libs ##
+包含OpenGL需要的各种Lib文件。
+
+## resouces ##
+包含各种工程中需要的资源文件。
+
+## SettingCode ##
+包含着色器、glad.c各种特殊文件
+
 ## Code ##
 工程的源代码。
 
@@ -46,20 +61,7 @@
 - StencilTestingDemo 模板测试
 ![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/StencilTest.jpg)
 
-## glfw-3.2.1 ##
-glfw-3.2.1源码,可以编译得到glfw3.lib。
 
-## Includes ##
-包含OpenGL需要的各种头文件。
-
-## Libs ##
-包含OpenGL需要的各种Lib文件。
-
-## resouces ##
-包含各种工程中需要的资源文件。
-
-## SettingCode ##
-包含着色器、glad.c各种特殊文件
 
 
 
