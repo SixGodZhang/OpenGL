@@ -31,6 +31,8 @@
 ![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/MutiLight.jpg)
 - PointLightDemo 点光源
 - SpotLightDemo 聚光灯
+- FaceCullingDemo 面剔除
+![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/faceCullingDemo.jpg)
 - StencilTestingDemo 模板测试
 ![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/StencilTest.jpg)
 
