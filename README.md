@@ -44,6 +44,11 @@ glfw-3.2.1源码,可以编译得到glfw3.lib。
 ![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/LoadModel.jpg)
 - MaterialDemo 材质
 - Materix3DDemo 3D矩阵
+- SkyBoxDemo 天空盒
+![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/天空盒.jpg)
+![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/应用天空纹理.jpg)
+![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/载入模型的环境贴图.jpg)
+![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/折射玻璃材质.jpg)
 - MultiLightDemo 多光源
 ![](https://github.com/SixGodZhang/OpenGL/blob/master/document/docImage/MutiLight.jpg)
 - PointLightDemo 点光源

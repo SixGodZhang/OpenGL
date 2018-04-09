@@ -12,7 +12,9 @@ enum Camera_Movement {
     FORWARD,
     BACKWARD,
     LEFT,
-    RIGHT
+    RIGHT,
+	UP,
+	DOWN
 };
 
 // Default camera values
@@ -28,18 +30,18 @@ class Camera
 {
 public:
     // Camera Attributes
-    glm::vec3 Position;
-    glm::vec3 Front;
-    glm::vec3 Up;
-    glm::vec3 Right;
-    glm::vec3 WorldUp;
+    glm::vec3 Position;//位置
+    glm::vec3 Front;//Z轴
+    glm::vec3 Up;//Y轴
+    glm::vec3 Right;//X轴
+    glm::vec3 WorldUp;//世界坐标系Y轴
     // Euler Angles
-    float Yaw;
-    float Pitch;
+    float Yaw;//偏航角(x,z)
+    float Pitch;//俯仰角
     // Camera options
-    float MovementSpeed;
-    float MouseSensitivity;
-    float Zoom;
+    float MovementSpeed;//移动速度
+    float MouseSensitivity;//鼠标敏感度
+    float Zoom;//缩放
 
     // Constructor with vectors
     Camera(glm::vec3 position = glm::vec3(0.0f, 0.0f, 0.0f), glm::vec3 up = glm::vec3(0.0f, 1.0f, 0.0f), float yaw = YAW, float pitch = PITCH) : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM)
@@ -50,6 +52,7 @@ public:
         Pitch = pitch;
         updateCameraVectors();
     }
+
     // Constructor with scalar values
     Camera(float posX, float posY, float posZ, float upX, float upY, float upZ, float yaw, float pitch) : Front(glm::vec3(0.0f, 0.0f, -1.0f)), MovementSpeed(SPEED), MouseSensitivity(SENSITIVITY), Zoom(ZOOM)
     {
@@ -78,6 +81,11 @@ public:
             Position -= Right * velocity;
         if (direction == RIGHT)
             Position += Right * velocity;
+		if (direction == UP)
+			Position += Up * velocity;
+		if (direction == DOWN)
+			Position -= Up * velocity;
+
     }
 
     // Processes input received from a mouse input system. Expects the offset value in both the x and y direction.
